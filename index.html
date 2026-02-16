@@ -1754,6 +1754,15 @@
     transform: scale(0.95);
     transition: all 0.2s;
 }
+        #cliente-direccion {
+    resize: none; 
+    border: 2px solid #eee;
+    transition: border-color 0.3s;
+}
+
+#cliente-direccion:focus {
+    border-color: var(--VERDE);
+}
     </style>
 </head>
 <body>
@@ -1889,15 +1898,19 @@
 
 <div id="seccion-delivery" style="display: none;">
     <div class="form-group">
-        <label for="cliente-distrito">Distrito para Delivery *</label>
-        <select id="cliente-distrito" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;" onchange="actualizarCostoDelivery()">
-            <option value="">Selecciona tu distrito</option>
-            <option value="Hospital Militar Reja Negra - S/ 0">Hospital Militar (Reja Negra - Av brasil)</option>
-            <option value="Pueblo Libre - S/ 5">Pueblo Libre — S/ 5</option>
-            <option value="interdistrital-consultar">Interdistrital (Consultar precio)</option>
-        </select>
+        <label for="cliente-direccion">Dirección y Distrito *</label>
+        <textarea id="cliente-direccion" rows="3" placeholder="Ej: Av. Brasil 2804, Pueblo Libre. Ref: Frente al Hospital Militar" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px; font-family: 'Poppins', sans-serif;"></textarea>
+        <div class="error-mensaje" id="error-direccion">Por favor ingresa tu dirección exacta</div>
     </div>
     
+    <div class="form-group" style="margin-top: 10px;">
+        <button type="button" class="btn" style="width: 100%; background: #4285F4; margin: 0; font-size: 0.85rem;" onclick="obtenerUbicacion()">
+             Enviar mi GPS (Opcional)
+        </button>
+        <div id="status-ubicacion" style="font-size: 0.75rem; color: var(--VERDE); margin-top: 5px; display: none;"></div>
+    </div>
+</div>
+                
     <div class="form-group" style="margin-top: 15px;">
         <label for="cliente-direccion">Dirección Exacta y Referencia *</label>
         <textarea id="cliente-direccion" rows="2" placeholder="Ej: Av. La Marina 500, frente al grifo Primax" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px; font-family: 'Poppins', sans-serif;"></textarea>
@@ -3801,40 +3814,49 @@
             enviarPedidoWhatsApp();
         }
 
-        function enviarPedidoWhatsApp() {
-            const nombre = document.getElementById('cliente-nombre').value;
-            const telefono = document.getElementById('cliente-telefono').value;
-            const esDelivery = document.getElementById('seccion-delivery').style.display === 'block';
-            
-            let mensaje = `🍽 *NUEVO PEDIDO - CEVICHERÍA TIPOS* 🦐\n\n`;
-            mensaje += `*CLIENTE:*\nNombre: ${nombre}\nWhatsApp: ${telefono}\n\n`;
-            mensaje += `*MODALIDAD:* ${esDelivery ? 'Delivery 🚚' : 'Recoger en tienda 🏃'}\n`;
-            
-            if (esDelivery) {
-                mensaje += `Distrito: ${document.getElementById('cliente-distrito').value.split(' - ')[0]}\n`;
-                mensaje += `*Dirección:* ${document.getElementById('cliente-direccion').value}\n`;
-            }
-            
-            mensaje += `\n*PEDIDO:*\n────────\n`;
-            carrito.forEach(item => {
-                mensaje += `• ${item.cantidad} x ${item.nombre} — S/ ${(item.precio * item.cantidad).toFixed(2)}\n`;
-                if(item.especificaciones) mensaje += `  → ${item.especificaciones}\n`;
-            });
-            
-            const total = document.getElementById('total-pedido').innerText;
-            mensaje += `\n*TOTAL A PAGAR: ${total}*\n`;
-            mensaje += `*MÉTODO DE PAGO: ${metodoPagoSeleccionado.toUpperCase()}*\n`;
-            
-            if (metodoPagoSeleccionado === 'efectivo') {
-                const monto = document.getElementById('monto-efectivo').value;
-                mensaje += `Paga con: S/ ${monto}\n`;
-            }
-            
-            const notas = document.getElementById('instrucciones').value;
-            if (notas) mensaje += `\n*NOTAS:* ${notas}\n`;
-            
-            const numero = '51977420834';
-            window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`, '_blank');
+       function enviarPedidoWhatsApp() {
+    const nombre = document.getElementById('cliente-nombre').value;
+    const telefono = document.getElementById('cliente-telefono').value;
+    const esDelivery = document.getElementById('seccion-delivery').style.display === 'block';
+    
+    let mensaje = `🍽 *NUEVO PEDIDO - CEVICHERÍA TIPO'S* 🦐\n\n`;
+    mensaje += `*CLIENTE:*\n${nombre}\nWhatsApp: ${telefono}\n\n`;
+    mensaje += `*MODALIDAD:* ${esDelivery ? 'Delivery 🚚' : 'Recoger en tienda 🏃'}\n`;
+    
+    if (esDelivery) {
+        // Obtenemos lo que el usuario escribió en el textarea
+        const direccionEscrita = document.getElementById('cliente-direccion').value;
+        mensaje += `*DIRECCIÓN:* ${direccionEscrita}\n`;
+        
+        // Si usó el botón de GPS, añadimos el link
+        if (typeof ubicacionURL !== 'undefined' && ubicacionURL) {
+            mensaje += `*UBICACIÓN GPS:* ${ubicacionURL}\n`;
+        }
+    }
+    
+    mensaje += `\n*PEDIDO:*\n────────\n`;
+    carrito.forEach(item => {
+        mensaje += `• ${item.cantidad} x ${item.nombre} — S/ ${(item.precio * item.cantidad).toFixed(2)}\n`;
+        if(item.especificaciones) mensaje += `  → ${item.especificaciones}\n`;
+    });
+    
+    const subtotal = document.getElementById('subtotal-pedido').innerText;
+    mensaje += `\n*SUBTOTAL: ${subtotal}*\n`;
+    
+    if (esDelivery) {
+        mensaje += `_(El costo de delivery se coordinará por aquí)_ 🛵\n`;
+    }
+
+    mensaje += `*MÉTODO DE PAGO:* ${metodoPagoSeleccionado.toUpperCase()}\n`;
+    
+    if (metodoPagoSeleccionado === 'efectivo') {
+        const monto = document.getElementById('monto-efectivo').value;
+        mensaje += `Paga con: S/ ${monto}\n`;
+    }
+    
+    const numero = '51977420834';
+    window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`, '_blank');
+}
             
             setTimeout(() => {
                 vaciarCarrito();
