@@ -1519,6 +1519,13 @@
                 <p style="font-size: 0.8rem; color: #666; margin-top: 1rem; text-align: center;">
                     ¡Dale un último vistazo a tu carrito! Al confirmar, tu pedido será definitivo. Así nos aseguramos de enviarte exactamente lo que elegiste sin demoras.
                 </p>
+                
+                <div class="form-group" style="margin-top: 15px; background: #f8f9fa; padding: 10px; border-radius: 8px; border: 1px dashed #ccc;">
+    <label style="display: flex; align-items: flex-start; font-weight: normal; font-size: 0.75rem; color: #555; gap: 8px; cursor: pointer; margin: 0;">
+        <input type="checkbox" id="acepto-terminos" checked style="width: auto; margin-top: 3px;">
+        <span>Al enviar este pedido, acepto el tratamiento de mis datos personales únicamente para la gestión, comunicación y entrega de esta compra.</span>
+    </label>
+</div>
             </div>
         </div>
     </div>
@@ -3286,7 +3293,11 @@
                     valido = false;
                 }
             }
-            
+const checkTerminos = document.getElementById('acepto-terminos');
+if (checkTerminos && !checkTerminos.checked) {
+    alert('⚠ Por favor, acepta el tratamiento de datos para poder procesar tu pedido.');
+    valido = false;
+}
             if (!valido) return;
 
             const btn = event.target;
