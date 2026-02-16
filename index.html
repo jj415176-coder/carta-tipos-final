@@ -90,7 +90,7 @@
 
         .subtitulo {
             font-size: 1rem;
-            color: var(--VERDE); /* Changed from ROJO to VERDE */
+            color: var(--VERDE);
             font-style: italic;
             margin-bottom: 1.5rem;
         }
@@ -242,7 +242,7 @@
 
         .plato-precio {
             background: none;
-            color: var(--VERDE); /* Friendly green */
+            color: var(--VERDE); 
             padding: 2px 0;
             font-weight: 700;
             font-size: 1.15rem;
@@ -260,7 +260,7 @@
         .precio-opcion {
             display: flex;
             justify-content: space-between;
-            background: var(--VERDE); /* Friendly green */
+            background: var(--VERDE); 
             color: var(--blanco);
             padding: 0.3rem 0.6rem;
             border-radius: 15px;
@@ -639,7 +639,7 @@
 
         .carrito-item-precio {
             font-weight: 600;
-            color: var(--VERDE); /* Friendly green */
+            color: var(--VERDE); 
             font-size: 1rem;
             white-space: nowrap;
         }
@@ -863,7 +863,7 @@
         }
 
         .sugerencia-precio {
-            color: var(--VERDE); /* Friendly green */
+            color: var(--VERDE); 
             font-weight: 600;
             font-size: 0.9rem;
         }
@@ -879,14 +879,8 @@
 
         /* ========== ANIMACIONES ========== */
         @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .formulario-pedido {
@@ -1095,580 +1089,19 @@
             display: none;
         }
 
-        /* ========== RESPONSIVE ========== */
+        /* ========== CORRECCIONES RESPONSIVE UNIFICADAS ========== */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 1.8rem;
-            }
-            
-            h2 {
-                font-size: 1.5rem;
-            }
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.5rem; }
             
             .menu-grid {
                 grid-template-columns: 1fr;
                 gap: 0.8rem;
             }
             
-            .logo {
-                max-width: 200px;
-            }
+            .logo { max-width: 200px; }
             
-            .plato-info {
-                flex-direction: column;
-            }
-            
-            .plato-precio, .precio-doble {
-                margin-top: 0.5rem;
-                align-self: flex-start;
-            }
-            
-            .platos-inicio {
-                max-width: 90%;
-            }
-            
-            .plato-imagen {
-                height: 150px;
-            }
-
-            .menu-btn-img {
-                min-height: 100px;
-                padding: 1rem;
-            }
-            
-            .menu-btn-img h3 {
-                font-size: 1.2rem;
-            }
-
-            .location-card-premium {
-                padding: 25px 15px;
-                margin-top: 20px;
-            }
-
-            .premium-title {
-                font-size: 1.3rem;
-            }
-
-            .form-reserva {
-                padding: 1.5rem;
-            }
-
-            .form-grid-pro {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .titulo-pro {
-                font-size: 1.8rem;
-            }
-
-            .carrito-item {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-                text-align: center;
-            }
-            
-            .carrito-item-imagen {
-                margin: 0 auto;
-            }
-            
-            .carrito-item-cantidad {
-                justify-content: center;
-            }
-            
-            .carrito-botones {
-                flex-direction: column;
-            }
-            
-            .sugerencias-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .carrito-contenido {
-                padding: 1.5rem;
-                margin: 1rem auto;
-            }
-            
-            .carrito-header h2 {
-                font-size: 1.5rem;
-            }
-            
-            .carrito-resumen {
-                padding: 1.5rem;
-            }
-
-            .metodo-pago {
-                flex-direction: column;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.6rem;
-            }
-            
-            h2 {
-                font-size: 1.3rem;
-            }
-            
-            .btn {
-                padding: 0.7rem 1.2rem;
-                font-size: 0.9rem;
-            }
-            
-            .plato-nombre {
-                font-size: 0.95rem;
-            }
-            
-            .precio-doble {
-                flex-direction: column;
-                width: 100%;
-            }
-            
-            .plato-imagen {
-                height: 120px;
-            }
-
-            .menu-btn-img {
-                min-height: 90px;
-            }
-            
-            .menu-btn-img h3 {
-                font-size: 1.1rem;
-            }
-
-            .carrito-contenido {
-                padding: 1rem;
-            }
-
-            .titulo-pro {
-                font-size: 1.6rem;
-            }
-
-            .form-reserva {
-                padding: 1rem;
-            }
-        }
-        
-        /* Mejora para las sugerencias con imágenes */
-        .sugerencia-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px;
-            background: white;
-            border-radius: 12px;
-            transition: all 0.3s;
-            border: 1px solid #eee;
-        }
-
-        .sugerencia-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border-color: var(--VERDE);
-        }
-
-        .sugerencia-item img {
-            border-radius: 6px;
-        }
-
-        .sugerencia-info {
-            flex: 1;
-        }
-
-        .sugerencia-nombre {
-            font-weight: 600;
-            color: var(--VERDE);
-            font-size: 0.9rem;
-            margin-bottom: 4px;
-        }
-
-        .sugerencia-precio {
-            color: var(--VERDE); /* Friendly green */
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-        
-        /* Indicador de campo obligatorio en personalización */
-        .categoria-titulo[style*="color: var(--ROJO)"] {
-            color: var(--ROJO) !important;
-            font-weight: bold;
-        }
-
-        /* Asterisco rojo para campos obligatorios */
-        .categoria-titulo.obligatorio::after {
-            content: " *";
-            color: var(--ROJO);
-            font-weight: bold;
-        }
-
-        /* Mensaje de error en el modal */
-        .mensaje-error-modal {
-            color: var(--ROJO);
-            font-size: 0.85rem;
-            text-align: center;
-            margin: 10px 0;
-            padding: 8px;
-            background: #ffe6e6;
-            border-radius: 5px;
-            display: none;
-        }
-
-        .mensaje-error-modal.mostrar {
-            display: block;
-        }
-        
-        /* Estilos para las opciones de personalización */
-        .opcion-personalizacion {
-            background: var(--gris-claro);
-            border: 2px solid #ddd;
-            border-radius: 12px;
-            padding: 15px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 8px;
-        }
-
-        .opcion-personalizacion:hover {
-            border-color: var(--VERDE);
-            background: #f0f0f0;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .opcion-personalizacion.seleccionado {
-            background: var(--VERDE);
-            color: white;
-            border-color: var(--VERDE);
-            box-shadow: 0 0 0 3px rgba(28, 97, 37, 0.2);
-        }
-
-        /* Separadores visuales entre secciones */
-        .separador-seccion {
-            height: 2px;
-            background: linear-gradient(to right, transparent, var(--gris-claro), transparent);
-            margin: 25px 0;
-        }
-        
-        /* Notificaciones sutiles */
-        #notificacion-agregado {
-            animation: slideInRight 0.3s ease, slideOutRight 0.3s ease 2s;
-        }
-
-        @keyframes slideInRight {
-            from {
-                transform: translateX(120%);
-            }
-            to {
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideOutRight {
-            from {
-                transform: translateX(0);
-            }
-            to {
-                transform: translateX(120%);
-            }
-        }
-        
-        /* Mejora para el botón del carrito */
-        .carrito-btn {
-            position: fixed;
-            width: 70px;
-            height: 70px;
-            bottom: 20px;
-            right: 20px;
-            background-color: var(--ROJO);
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(174, 32, 18, 0.4);
-            z-index: 9000 !important;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 3px solid white;
-        }
-
-        .carrito-btn:hover {
-            transform: scale(1.1);
-            background-color: #c62828;
-            box-shadow: 0 6px 20px rgba(174, 32, 18, 0.6);
-        }
-
-        .carrito-btn span {
-            font-size: 28px;
-            line-height: 1;
-        }
-
-        .carrito-cantidad {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            background-color: var(--AMARILLO);
-            color: var(--NEGRO);
-            border-radius: 50%;
-            width: 26px;
-            height: 26px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 0.9rem;
-            border: 2px solid white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-
-        /* Asegurar que el modal del carrito tenga el z-index más alto */
-        .carrito-modal {
-            z-index: 20000;
-        }
-
-        .whatsapp-btn {
-            z-index: 9000 !important;
-        }
-        
-        /* ========== BOTONES FLOTANTES ========== */
-        /* Botón de WhatsApp - izquierda */
-        .whatsapp-btn {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 20px;
-            left: 20px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 24px;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            z-index: 9000 !important; 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: 3px solid white;
-        }
-
-        .whatsapp-btn:hover {
-            transform: scale(1.1);
-            background-color: #1da851;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
-        }
-
-        /* Para pantallas pequeñas */
-        @media (max-width: 768px) {
-            .whatsapp-btn {
-                width: 55px;
-                height: 55px;
-                bottom: 15px;
-                left: 15px;
-                font-size: 22px;
-            }
-            
-            .carrito-btn {
-                width: 60px;
-                height: 60px;
-                bottom: 15px;
-                right: 15px;
-            }
-            
-            .carrito-cantidad {
-                width: 24px;
-                height: 24px;
-                font-size: 0.8rem;
-            }
-        }
-
-        /* Para pantallas muy pequeñas */
-        @media (max-width: 480px) {
-            .whatsapp-btn {
-                width: 50px;
-                height: 50px;
-                bottom: 10px;
-                left: 10px;
-                font-size: 20px;
-            }
-            
-            .carrito-btn {
-                width: 55px;
-                height: 55px;
-                bottom: 10px;
-                right: 10px;
-            }
-            
-            .carrito-cantidad {
-                width: 22px;
-                height: 22px;
-                font-size: 0.75rem;
-            }
-        }
-        
-        /* ========== CORRECCIONES RESPONSIVE ========== */
-        @media (max-width: 768px) {
-            /* Mejoras para modal de personalización en móvil */
-            .modal-personalizacion-contenido {
-                width: 95%;
-                padding: 1.5rem;
-                max-height: 85vh;
-                overflow-y: auto;
-            }
-            
-            .opcion-personalizacion {
-                min-width: 100px !important;
-                padding: 12px 5px !important;
-                font-size: 0.85rem !important;
-            }
-            
-            .botones-modal-personalizacion {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .btn-cancelar-personalizacion,
-            .btn-confirmar-personalizacion {
-                width: 100% !important;
-            }
-            
-            /* Mejoras para el formulario de pedido en móvil */
-            .carrito-contenido {
-                width: 95%;
-                margin: 10px auto;
-                padding: 15px;
-                max-height: 90vh;
-                overflow-y: auto;
-            }
-            
-            .carrito-item {
-                grid-template-columns: 1fr;
-                text-align: left;
-                gap: 10px;
-            }
-            
-            .carrito-item-imagen {
-                width: 100%;
-                height: 150px;
-                margin: 0 auto;
-            }
-            
-            .carrito-item-cantidad {
-                justify-content: flex-start;
-            }
-            
-            /* Ajustes para botones de opciones */
-            .opciones-personalizacion > div {
-                display: flex;
-                flex-direction: column;
-                gap: 8px;
-            }
-            
-            .opcion-personalizacion {
-                width: 100% !important;
-                margin-bottom: 5px;
-            }
-            
-            /* Asegurar que los textos no se salgan */
-            .carrito-item-nombre {
-                font-size: 0.95rem;
-                word-break: break-word;
-            }
-            
-            .plato-nombre {
-                font-size: 0.9rem;
-            }
-            
-            .plato-desc {
-                font-size: 0.8rem;
-            }
-            
-            /* Mejoras para formulario de reserva */
-            .form-reserva {
-                padding: 15px;
-            }
-            
-            .form-grid-pro {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            /* Ajustes extra para pantallas muy pequeñas */
-            .modal-personalizacion-contenido {
-                padding: 1rem;
-            }
-            
-            .opcion-personalizacion {
-                padding: 10px 5px !important;
-                font-size: 0.8rem !important;
-            }
-            
-            .carrito-contenido {
-                padding: 10px;
-            }
-            
-            .carrito-header h2 {
-                font-size: 1.3rem;
-            }
-            
-            .carrito-resumen {
-                padding: 1rem;
-            }
-            
-            .carrito-item-subtotal {
-                font-size: 1rem;
-            }
-            
-            /* Botones más grandes para tocar fácilmente */
-            .btn-agregar, .btn {
-                padding: 12px 15px;
-                font-size: 0.9rem;
-            }
-            
-            .cantidad-btn {
-                width: 36px;
-                height: 36px;
-            }
-        }
-
-        /* ========== MEJORAS PARA OPCIONES EN MODAL ========== */
-        .opcion-personalizacion {
-            transition: all 0.2s ease;
-            -webkit-tap-highlight-color: transparent; /* Elimina el highlight azul en iOS */
-        }
-
-        .opcion-personalizacion:active {
-            transform: scale(0.98);
-        }
-
-        /* Evitar zoom en inputs en iOS */
-        @media screen and (max-width: 768px) {
-            input, select, textarea {
-                font-size: 16px; /* Previene zoom automático en iOS */
-            }
-        }
-        
- @media (max-width: 768px) {
-    .btn-agregar {
-        width: 100% !important;      
-        padding: 16px !important;     
-        background-color: var(--VERDE) !important; /* Verde amigable */
-        font-weight: 700 !important;  
-        border-radius: 12px !important;
-        box-shadow: 0 4px 10px rgba(28, 97, 37, 0.3) !important;
-    }
-}            
-            .plato-item {
-                padding: 15px;
-            }
+            .plato-item { padding: 15px; }
             
             .plato-info {
                 flex-direction: column;
@@ -1685,109 +1118,190 @@
                 justify-content: space-between;
                 padding: 8px 10px;
             }
+            
+            .platos-inicio { max-width: 90%; }
+            .plato-imagen { height: 150px; }
+            .menu-btn-img { min-height: 100px; padding: 1rem; }
+            .menu-btn-img h3 { font-size: 1.2rem; }
+            
+            .location-card-premium { padding: 25px 15px; margin-top: 20px; }
+            .premium-title { font-size: 1.3rem; }
+            
+            .form-reserva { padding: 1.5rem; }
+            .form-grid-pro { grid-template-columns: 1fr; gap: 1rem; }
+            .titulo-pro { font-size: 1.8rem; }
+            
+            .carrito-item {
+                grid-template-columns: 1fr;
+                text-align: left;
+                gap: 10px;
+            }
+            
+            .carrito-item-imagen { width: 100%; height: 150px; margin: 0 auto; }
+            .carrito-item-cantidad { justify-content: flex-start; }
+            .carrito-botones { flex-direction: column; }
+            .sugerencias-grid { grid-template-columns: 1fr; }
+            
+            .carrito-contenido {
+                width: 95%;
+                margin: 10px auto;
+                padding: 15px;
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+            
+            .carrito-header h2 { font-size: 1.5rem; }
+            .carrito-resumen { padding: 1.5rem; }
+            .metodo-pago { flex-direction: column; }
+            
+            .whatsapp-btn {
+                width: 55px; height: 55px; bottom: 15px; left: 15px; font-size: 22px;
+            }
+            .carrito-btn {
+                width: 60px; height: 60px; bottom: 15px; right: 15px;
+            }
+            .carrito-cantidad {
+                width: 24px; height: 24px; font-size: 0.8rem;
+            }
+            
+            .modal-personalizacion-contenido {
+                width: 95%; padding: 1.5rem; max-height: 85vh; overflow-y: auto;
+            }
+            
+            .opciones-personalizacion > div {
+                display: flex; flex-direction: column; gap: 8px;
+            }
+            
+            .opcion-personalizacion {
+                width: 100% !important; margin-bottom: 5px; min-width: 100px !important; padding: 12px 5px !important; font-size: 0.85rem !important;
+            }
+            
+            .botones-modal-personalizacion {
+                flex-direction: column; gap: 10px;
+            }
+            
+            .btn-cancelar-personalizacion, .btn-confirmar-personalizacion {
+                width: 100% !important;
+            }
+            
+            .carrito-item-nombre { font-size: 0.95rem; word-break: break-word; }
+            .plato-nombre { font-size: 0.9rem; }
+            .plato-desc { font-size: 0.8rem; }
+            
+            .btn-agregar {
+                width: 100% !important;        
+                padding: 16px !important;      
+                background-color: var(--VERDE) !important;
+                font-weight: 700 !important;   
+                border-radius: 12px !important;
+                box-shadow: 0 4px 10px rgba(28, 97, 37, 0.3) !important;
+            }
+            
+            input, select, textarea { font-size: 16px; } /* Previene zoom en iOS */
         }
 
         @media (max-width: 480px) {
-            .btn-agregar {
-                padding: 14px;
-                font-size: 1rem;
-                font-weight: bold;
-            }
+            h1 { font-size: 1.6rem; }
+            h2 { font-size: 1.3rem; }
+            .btn { padding: 0.7rem 1.2rem; font-size: 0.9rem; }
+            .plato-nombre { font-size: 0.95rem; }
+            .precio-doble { flex-direction: column; width: 100%; }
+            .plato-imagen { height: 140px; }
+            .menu-btn-img { min-height: 90px; }
+            .menu-btn-img h3 { font-size: 1.1rem; }
+            .carrito-contenido { padding: 10px; }
+            .titulo-pro { font-size: 1.6rem; }
+            .form-reserva { padding: 1rem; }
             
-            .plato-imagen {
-                height: 140px;
-            }
+            .modal-personalizacion-contenido { padding: 1rem; }
+            .opcion-personalizacion { padding: 10px 5px !important; font-size: 0.8rem !important; }
+            .carrito-header h2 { font-size: 1.3rem; }
+            .carrito-resumen { padding: 1rem; }
+            .carrito-item-subtotal { font-size: 1rem; }
+            .btn-agregar, .btn { padding: 12px 15px; font-size: 0.9rem; }
+            .cantidad-btn { width: 36px; height: 36px; }
+            
+            .whatsapp-btn { width: 50px; height: 50px; bottom: 10px; left: 10px; font-size: 20px; }
+            .carrito-btn { width: 55px; height: 55px; bottom: 10px; right: 10px; }
+            .carrito-cantidad { width: 22px; height: 22px; font-size: 0.75rem; }
         }
+
+        /* Mejora para las sugerencias con imágenes */
+        .sugerencia-item { display: flex; align-items: center; gap: 12px; padding: 12px; background: white; border-radius: 12px; transition: all 0.3s; border: 1px solid #eee; }
+        .sugerencia-item:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-color: var(--VERDE); }
+        .sugerencia-item img { border-radius: 6px; }
+        .sugerencia-info { flex: 1; }
+        .sugerencia-nombre { font-weight: 600; color: var(--VERDE); font-size: 0.9rem; margin-bottom: 4px; }
+        .sugerencia-precio { color: var(--VERDE); font-weight: 600; font-size: 0.9rem; }
         
-        #error-distrito {
-            color: var(--ROJO);
-            font-size: 0.8rem;
-            margin-top: 5px;
-            display: none;
-        }
-.overlay-guia {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.85);
-    z-index: 50000; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(5px);
-}
-.cartel-guia {
-    background: white;
-    padding: 30px;
-    border-radius: 25px;
-    width: 90%;
-    max-width: 380px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    border: 3px solid #CED914;
-}
+        .categoria-titulo[style*="color: var(--ROJO)"] { color: var(--ROJO) !important; font-weight: bold; }
+        .categoria-titulo.obligatorio::after { content: " *"; color: var(--ROJO); font-weight: bold; }
 
-@keyframes rebote_carrito {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.4); }
-    100% { transform: scale(1); }
-}
-.animar-carrito {
-    animation: rebote_carrito 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-        /*esta vaina hace interactue el carrito de compras xd*/
-@keyframes shake-cart {
-    0% { transform: scale(1) rotate(0deg); }
-    20% { transform: scale(1.2) rotate(-15deg); }
-    40% { transform: scale(1.2) rotate(15deg); }
-    60% { transform: scale(1.2) rotate(-15deg); }
-    80% { transform: scale(1.2) rotate(15deg); }
-    100% { transform: scale(1) rotate(0deg); }
-}
+        .mensaje-error-modal { color: var(--ROJO); font-size: 0.85rem; text-align: center; margin: 10px 0; padding: 8px; background: #ffe6e6; border-radius: 5px; display: none; }
+        .mensaje-error-modal.mostrar { display: block; }
+        
+        .separador-seccion { height: 2px; background: linear-gradient(to right, transparent, var(--gris-claro), transparent); margin: 25px 0; }
+        
+        #notificacion-agregado { animation: slideInRight 0.3s ease, slideOutRight 0.3s ease 2s; }
+        @keyframes slideInRight { from { transform: translateX(120%); } to { transform: translateX(0); } }
+        @keyframes slideOutRight { from { transform: translateX(0); } to { transform: translateX(120%); } }
+        
+        .carrito-btn { position: fixed; width: 70px; height: 70px; bottom: 20px; right: 20px; background-color: var(--ROJO); color: white; border-radius: 50%; text-align: center; box-shadow: 0 4px 15px rgba(174, 32, 18, 0.4); z-index: 9000 !important; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease; border: 3px solid white; }
+        .carrito-btn:hover { transform: scale(1.1); background-color: #c62828; box-shadow: 0 6px 20px rgba(174, 32, 18, 0.6); }
+        .carrito-btn span { font-size: 28px; line-height: 1; }
+        
+        .carrito-cantidad { position: absolute; top: -5px; right: -5px; background-color: var(--AMARILLO); color: var(--NEGRO); border-radius: 50%; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.9rem; border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        
+        .carrito-modal { z-index: 20000; }
+        .whatsapp-btn { z-index: 9000 !important; }
+        
+        .whatsapp-btn { position: fixed; width: 60px; height: 60px; bottom: 20px; left: 20px; background-color: #25d366; color: #FFF; border-radius: 50%; text-align: center; font-size: 24px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease; border: 3px solid white; }
+        .whatsapp-btn:hover { transform: scale(1.1); background-color: #1da851; box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6); }
 
-.animar-sacudida {
-    animation: shake-cart 0.6s ease-in-out !important;
-}
+        .opcion-personalizacion { transition: all 0.2s ease; -webkit-tap-highlight-color: transparent; }
+        .opcion-personalizacion:active { transform: scale(0.98); }
 
-/* Estilo del botón cuando se presiona se vuelve rojito */
-.btn-enviando {
-    background-color: var(--ROJO) !important;
-    transform: scale(0.95);
-    transition: all 0.2s;
-}
-        #cliente-direccion {
-    resize: none; 
-    border: 2px solid #eee;
-    transition: border-color 0.3s;
-}
+        #error-distrito { color: var(--ROJO); font-size: 0.8rem; margin-top: 5px; display: none; }
+        
+        .overlay-guia { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 50000; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(5px); }
+        .cartel-guia { background: white; padding: 30px; border-radius: 25px; width: 90%; max-width: 380px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 3px solid #CED914; }
 
-#cliente-direccion:focus {
-    border-color: var(--VERDE);
-}
+        @keyframes rebote_carrito { 0% { transform: scale(1); } 50% { transform: scale(1.4); } 100% { transform: scale(1); } }
+        .animar-carrito { animation: rebote_carrito 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        
+        @keyframes shake-cart { 0% { transform: scale(1) rotate(0deg); } 20% { transform: scale(1.2) rotate(-15deg); } 40% { transform: scale(1.2) rotate(15deg); } 60% { transform: scale(1.2) rotate(-15deg); } 80% { transform: scale(1.2) rotate(15deg); } 100% { transform: scale(1) rotate(0deg); } }
+        .animar-sacudida { animation: shake-cart 0.6s ease-in-out !important; }
+
+        .btn-enviando { background-color: var(--ROJO) !important; transform: scale(0.95); transition: all 0.2s; }
+        
+        #cliente-direccion { resize: none; border: 2px solid #eee; transition: border-color 0.3s; }
+        #cliente-direccion:focus { border-color: var(--VERDE); }
     </style>
 </head>
 <body>
     <div id="guia-usuario" class="overlay-guia">
-    <div class="cartel-guia">
-        <div style="font-size: 3rem;">🦐</div>
-        <h3 style="color: #1C6125; font-family: 'Playfair Display', serif;">¡Pide fácil en Tipo's!</h3>
-        <p style="margin: 15px 0; font-size: 0.95rem; color: #444; line-height: 1.5;">
-            1. Elige tus platos favoritos.<br>
-            2. Agrégalos al <b>Carrito 🛒</b>.<br>
-            3. Envíanos el pedido por <b>WhatsApp</b>.
-        </p>
-        <button class="btn" style="width: 100%; margin: 0; background: #ae2012;" onclick="document.getElementById('guia-usuario').style.display='none'">
-            ¡EMPEZAR A PEDIR!
-        </button>
+        <div class="cartel-guia">
+            <div style="font-size: 3rem;">🦐</div>
+            <h3 style="color: #1C6125; font-family: 'Playfair Display', serif;">¡Pide fácil en Tipo's!</h3>
+            <p style="margin: 15px 0; font-size: 0.95rem; color: #444; line-height: 1.5;">
+                1. Elige tus platos favoritos.<br>
+                2. Agrégalos al <b>Carrito 🛒</b>.<br>
+                3. Envíanos el pedido por <b>WhatsApp</b>.
+            </p>
+            <button class="btn" style="width: 100%; margin: 0; background: #ae2012;" onclick="document.getElementById('guia-usuario').style.display='none'">
+                ¡EMPEZAR A PEDIR!
+            </button>
+        </div>
     </div>
-</div>
+    
     <a href="https://wa.me/51977420834" class="whatsapp-btn" target="_blank">
         <span style="font-size: 24px;">📱</span>
     </a>
 
     <div class="carrito-btn" onclick="mostrarCarrito()">
-    <span>🛒</span>
-    <div class="carrito-cantidad" id="carrito-contador">0</div>
-</div>
+        <span>🛒</span>
+        <div class="carrito-cantidad" id="carrito-contador">0</div>
+    </div>
 
     <div id="carrito-modal" class="carrito-modal">
         <div class="carrito-contenido">
@@ -1814,7 +1328,7 @@
                 <p style="color: #666; margin-bottom: 1.5rem; font-size: 0.95rem;">Completa tu experiencia con estos acompañamientos recomendados:</p>
                 
                 <div class="sugerencias-grid">
-                    </div>
+                </div>
                 
                 <p class="sugerencias-nota">¡Haz tu pedido más completo y delicioso!</p>
             </div>
@@ -1851,7 +1365,7 @@
             <h3 class="modal-personalizacion-titulo" id="titulo-personalizacion">Personaliza tu pedido</h3>
             
             <div id="opciones-container" class="opciones-personalizacion">
-                </div>
+            </div>
             
             <div class="campo-especificaciones">
                 <label for="especificaciones-personalizacion">Especificaciones adicionales:</label>
@@ -1889,58 +1403,52 @@
                 </div>
                 
                 <div class="form-group">
-    <label>Tipo de Pedido *</label>
-    <div style="display: flex; gap: 10px; margin-top: 5px;">
-        <button type="button" id="btn-delivery" class="btn-agregar" style="flex: 1;" onclick="seleccionarTipoPedido('delivery')"> Delivery</button>
-        <button type="button" id="btn-recoger" class="btn-agregar" style="flex: 1; background: var(--gris-claro); color: #333;" onclick="seleccionarTipoPedido('recoger')"> Recoger</button>
-    </div>
-</div>
+                    <label>Tipo de Pedido *</label>
+                    <div style="display: flex; gap: 10px; margin-top: 5px;">
+                        <button type="button" id="btn-delivery" class="btn-agregar" style="flex: 1;" onclick="seleccionarTipoPedido('delivery')"> Delivery</button>
+                        <button type="button" id="btn-recoger" class="btn-agregar" style="flex: 1; background: var(--gris-claro); color: #333;" onclick="seleccionarTipoPedido('recoger')"> Recoger</button>
+                    </div>
+                </div>
 
-<div id="seccion-delivery" style="display: none;">
-    <div class="form-group">
-        <label for="cliente-direccion">Dirección y Distrito *</label>
-        <textarea id="cliente-direccion" rows="3" placeholder="Ej: Av. Brasil 2804, Pueblo Libre. Ref: Frente al Hospital Militar" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px; font-family: 'Poppins', sans-serif;"></textarea>
-        <div class="error-mensaje" id="error-direccion">Por favor ingresa tu dirección exacta</div>
-    </div>
-    
-    <div class="form-group" style="margin-top: 10px;">
-        <button type="button" class="btn" style="width: 100%; background: #4285F4; margin: 0; font-size: 0.85rem;" onclick="obtenerUbicacion()">
-             Enviar mi GPS (Opcional)
-        </button>
-        <div id="status-ubicacion" style="font-size: 0.75rem; color: var(--VERDE); margin-top: 5px; display: none;"></div>
-    </div>
-</div>
-                
-    <div class="form-group" style="margin-top: 15px;">
-        <label for="cliente-direccion">Dirección Exacta y Referencia *</label>
-        <textarea id="cliente-direccion" rows="2" placeholder="Ej: Av. La Marina 500, frente al grifo Primax" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px; font-family: 'Poppins', sans-serif;"></textarea>
-        <div class="error-mensaje" id="error-direccion">Por favor ingresa tu dirección exacta</div>
-    </div>
-</div>
+                <div id="seccion-delivery" style="display: none;">
+                    <div class="form-group" style="margin-top: 15px;">
+                        <label for="cliente-direccion">Dirección y Distrito *</label>
+                        <textarea id="cliente-direccion" rows="3" placeholder="Ej: Av. La Marina 500, Pueblo Libre. Frente al grifo Primax" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px; font-family: 'Poppins', sans-serif;"></textarea>
+                        <div class="error-mensaje" id="error-direccion">Por favor ingresa tu dirección exacta</div>
+                    </div>
+                    
+                    <div class="form-group" style="margin-top: 10px;">
+                        <button type="button" class="btn" style="width: 100%; background: #4285F4; margin: 0; font-size: 0.85rem;" onclick="obtenerUbicacion()">
+                             📍 Enviar mi GPS (Opcional)
+                        </button>
+                        <div id="status-ubicacion" style="font-size: 0.75rem; color: var(--VERDE); margin-top: 5px; display: none;"></div>
+                    </div>
+                </div>
                 
                 <div class="form-group">
                     <label>Método de Pago *</label>
-             <div class="metodo-pago">
-    <div class="metodo-pago-opcion seleccionado" onclick="seleccionarMetodoPago('efectivo')">
-        <img src="img/efectivo.png" alt="Efectivo" class="metodo-pago-imagen" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2331/2331714.png'">
-        <div>Efectivo</div>
-    </div>
-    
-    <div class="metodo-pago-opcion" onclick="seleccionarMetodoPago('yape')">
-        <img src="img/yape.png" alt="Yape" class="metodo-pago-imagen" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Yape_logo.png/512px-Yape_logo.png'">
-        <div>Yape</div>
-    </div>
+                    <div class="metodo-pago">
+                        <div class="metodo-pago-opcion seleccionado" onclick="seleccionarMetodoPago('efectivo')">
+                            <img src="img/efectivo.png" alt="Efectivo" class="metodo-pago-imagen" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2331/2331714.png'">
+                            <div>Efectivo</div>
+                        </div>
+                        
+                        <div class="metodo-pago-opcion" onclick="seleccionarMetodoPago('yape')">
+                            <img src="img/yape.png" alt="Yape" class="metodo-pago-imagen" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Yape_logo.png/512px-Yape_logo.png'">
+                            <div>Yape</div>
+                        </div>
 
-    <div class="metodo-pago-opcion" onclick="seleccionarMetodoPago('plin')">
-        <img src="img/plin.webp" alt="Plin" class="metodo-pago-imagen" onerror="this.src='https://i.postimg.cc/mD88Y9pS/plin.png'">
-        <div>Plin</div>
-    </div>
+                        <div class="metodo-pago-opcion" onclick="seleccionarMetodoPago('plin')">
+                            <img src="img/plin.webp" alt="Plin" class="metodo-pago-imagen" onerror="this.src='https://i.postimg.cc/mD88Y9pS/plin.png'">
+                            <div>Plin</div>
+                        </div>
 
-    <div class="metodo-pago-opcion" onclick="seleccionarMetodoPago('tarjeta')">
-        <img src="img/tarjeta.png" class="metodo-pago-imagen" alt="Tarjeta" onerror="this.src='https://cdn-icons-png.flaticon.com/512/633/633611.png'">
-        <div>Tarjeta</div>
-    </div>
-</div>          </div>
+                        <div class="metodo-pago-opcion" onclick="seleccionarMetodoPago('tarjeta')">
+                            <img src="img/tarjeta.png" class="metodo-pago-imagen" alt="Tarjeta" onerror="this.src='https://cdn-icons-png.flaticon.com/512/633/633611.png'">
+                            <div>Tarjeta</div>
+                        </div>
+                    </div>
+                </div>
 
                 <div id="campo-efectivo" class="campo-pago mostrar">
                     <div class="form-group">
@@ -2009,7 +1517,7 @@
                 </div>
                 
                 <p style="font-size: 0.8rem; color: #666; margin-top: 1rem; text-align: center;">
-                   ¡Dale un último vistazo a tu carrito! Al confirmar, tu pedido será definitivo. Así nos aseguramos de enviarte exactamente lo que elegiste sin demoras.
+                    ¡Dale un último vistazo a tu carrito! Al confirmar, tu pedido será definitivo. Así nos aseguramos de enviarte exactamente lo que elegiste sin demoras.
                 </p>
             </div>
         </div>
@@ -2050,7 +1558,7 @@
                     Av. Brasil 2804, Pueblo Libre.
                 </p>
 
-                <a href="https://www.google.com/maps/search/?api=1&query=Av.+Brasil+2804,+Pueblo+Libre" target="_blank" class="btn-mapa-pro">
+                <a href="https://maps.app.goo.gl/tu-enlace-de-google-maps-aqui" target="_blank" class="btn-mapa-pro">
                     Ver Ubicación
                 </a>
             </div>
@@ -2123,7 +1631,6 @@
     <div class="menu-btn-img" onclick="mostrarPantalla('guarniciones')" style="background-image: url('img/btn-guarniciones.png')"><div class="btn-overlay"></div><h3>GUARNICIONES</h3></div>
     <div class="menu-btn-img" onclick="mostrarPantalla('bebidas')" style="background-image: url('img/btn-bebidas.png')"><div class="btn-overlay"></div><h3>BEBIDAS</h3></div>
 </div>
-            </div>
             
             <div style="text-align: center;">
                 <button class="btn btn-regresar" onclick="mostrarPantalla('bienvenida')">
@@ -3144,6 +2651,7 @@
         let opcionesSeleccionadas = {};
         let opcionesModal = [];
         let metodoPagoSeleccionado = 'efectivo';
+        let ubicacionURL = ""; // VARIABLE PARA EL GPS
 
         function mostrarPantalla(id) {
             document.querySelectorAll('.pantalla').forEach(p => {
@@ -3339,8 +2847,7 @@
                 
                 carritoItems.innerHTML = html;
                 subtotalCarrito.textContent = `S/ ${subtotal.toFixed(2)}`;
-                envioCarrito.textContent = 'S/ 0.00';
-                totalCarrito.textContent = `S/ ${subtotal.toFixed(2)}`;
+                envioCarrito.textContent = 'Por coordinar';
                 
                 mostrarSugerencias();
             }
@@ -3351,6 +2858,7 @@
                 void carritoFlotante.offsetWidth;
                 carritoFlotante.classList.add('animar-carrito');
             }
+            actualizarTotalPedido(); // Añadido para mantener la sincro
         }
 
         function mostrarSugerencias() {
@@ -3434,8 +2942,7 @@
             }
         }
 
-        // --- FUNCIONES CORREGIDAS PARA EL MODAL DE PERSONALIZACIÓN ---
-
+        // --- FUNCIONES PARA EL MODAL DE PERSONALIZACIÓN ---
         function abrirModalPersonalizacion(nombre, precio, opciones) {
             platoActual = nombre;
             precioActual = precio;
@@ -3600,8 +3107,7 @@
             opcionesModal = [];
         }
 
-        // --- FIN CORRECCIONES MODAL ---
-
+        // --- FUNCIONES FORMULARIO DE PEDIDO ---
         function mostrarFormularioPedido() {
             if (carrito.length === 0) {
                 alert('✗ Tu carrito está vacío');
@@ -3644,49 +3150,25 @@
         function actualizarTotalPedido() {
             const subtotalText = document.getElementById('subtotal-pedido').textContent.replace('S/ ', '');
             const subtotal = parseFloat(subtotalText) || 0;
-            const deliveryText = document.getElementById('costo-delivery').innerText;
             
             const totalElement = document.getElementById('total-pedido');
-            
-            if (deliveryText.toUpperCase().includes('CONSULTAR')) {
-                totalElement.innerHTML = `S/ ${subtotal.toFixed(2)} <span style="color: #d32f2f; font-size: 0.9em; font-weight: bold;">+ delivery</span>`;
-            } else {
-                const match = deliveryText.match(/(\d+(\.\d+)?)/);
-                const delivery = match ? parseFloat(match[1]) : 0;
-                totalElement.innerHTML = `S/ ${(subtotal + delivery).toFixed(2)}`;
-            }
-        }
-
-        function actualizarCostoDelivery() {
             const seccionDelivery = document.getElementById('seccion-delivery');
-            const costoElement = document.getElementById('costo-delivery');
             
-            if (seccionDelivery.style.display === 'none') {
-                costoElement.textContent = 'S/ 0.00';
-                actualizarTotalPedido();
-                return;
-            }
-            
-            const valorSeleccionado = document.getElementById('cliente-distrito').value;
-            if (valorSeleccionado.includes('S/')) {
-                const partes = valorSeleccionado.split('S/');
-                const costo = parseFloat(partes[1].trim());
-                costoElement.innerText = `S/ ${costo.toFixed(2)}`;
-            } else if (valorSeleccionado.includes('consultar')) {
-                costoElement.innerText = "A consultar";
+            if (seccionDelivery.style.display === 'block') {
+                totalElement.innerHTML = `S/ ${subtotal.toFixed(2)} <span style="color: #d32f2f; font-size: 0.75em; font-weight: bold;">+ delivery</span>`;
             } else {
-                costoElement.innerText = 'S/ 0.00';
+                totalElement.innerHTML = `S/ ${subtotal.toFixed(2)}`;
             }
-            actualizarTotalPedido();
         }
 
         function resetearFormularioPedido() {
             document.getElementById('cliente-nombre').value = '';
             document.getElementById('cliente-telefono').value = '';
-            document.getElementById('cliente-distrito').value = '';
             document.getElementById('cliente-direccion').value = '';
             document.getElementById('instrucciones').value = '';
             document.getElementById('monto-efectivo').value = '';
+            ubicacionURL = "";
+            document.getElementById('status-ubicacion').style.display = 'none';
             seleccionarTipoPedido('recoger');
             seleccionarMetodoPago('efectivo');
             limpiarErrores();
@@ -3703,6 +3185,7 @@
                 btnRecoger.style.background = 'var(--gris-claro)';
                 btnRecoger.style.color = '#333';
                 seccionDelivery.style.display = 'block';
+                document.getElementById('costo-delivery').textContent = 'Por coordinar';
             } else {
                 btnRecoger.style.background = 'var(--VERDE)';
                 btnRecoger.style.color = 'white';
@@ -3729,8 +3212,8 @@
 
         function calcularVuelto() {
             const monto = parseFloat(document.getElementById('monto-efectivo').value) || 0;
-            const totalText = document.getElementById('total-pedido').textContent.replace('S/ ', '').split(' ')[0];
-            const total = parseFloat(totalText) || 0;
+            const subtotalText = document.getElementById('subtotal-pedido').textContent.replace('S/ ', '');
+            const total = parseFloat(subtotalText) || 0;
             
             const vueltoInfo = document.getElementById('vuelto-info');
             
@@ -3738,13 +3221,13 @@
                 const diff = monto - total;
                 vueltoInfo.style.display = 'block';
                 if (diff >= 0) {
-                    document.getElementById('vuelto-texto').textContent = 'Vuelto:';
+                    document.getElementById('vuelto-texto').textContent = 'Vuelto aprox:';
                     document.getElementById('monto-vuelto').textContent = `S/ ${diff.toFixed(2)}`;
                     document.getElementById('monto-vuelto').style.color = 'var(--VERDE)';
                     vueltoInfo.style.background = 'var(--verde-claro)';
                     document.getElementById('advertencia-falta').style.display = 'none';
                 } else {
-                    document.getElementById('vuelto-texto').textContent = 'Falta:';
+                    document.getElementById('vuelto-texto').textContent = 'Falta aprox:';
                     document.getElementById('monto-vuelto').textContent = `S/ ${Math.abs(diff).toFixed(2)}`;
                     document.getElementById('monto-vuelto').style.color = 'var(--ROJO)';
                     vueltoInfo.style.background = '#ffe6e6';
@@ -3759,8 +3242,28 @@
             document.querySelectorAll('.error-mensaje').forEach(el => el.style.display = 'none');
         }
 
+        function obtenerUbicacion() {
+            const status = document.getElementById('status-ubicacion');
+            if (!navigator.geolocation) {
+                alert("Tu navegador no soporta geolocalización");
+                return;
+            }
+            status.style.display = 'block';
+            status.innerText = "⏳ Localizando...";
+            
+            navigator.geolocation.getCurrentPosition((position) => {
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;
+                ubicacionURL = `https://www.google.com/maps/search/?api=1&query=${lat},${lon}`;
+                status.innerText = "✅ Ubicación capturada con éxito";
+                status.style.color = "var(--VERDE)";
+            }, () => {
+                status.innerText = "❌ No se pudo obtener la ubicación";
+                status.style.color = "var(--ROJO)";
+            });
+        }
+
         function validarYEnviarPedido() {
-            // Validaciones básicas
             let valido = true;
             limpiarErrores();
             
@@ -3778,11 +3281,6 @@
             
             const esDelivery = document.getElementById('seccion-delivery').style.display === 'block';
             if (esDelivery) {
-                if (!document.getElementById('cliente-distrito').value) {
-                    // Crear error distrito dinámicamente si no existe o usar alert
-                    alert('Por favor selecciona un distrito');
-                    valido = false;
-                }
                 if (!document.getElementById('cliente-direccion').value.trim()) {
                     document.getElementById('error-direccion').style.display = 'block';
                     valido = false;
@@ -3791,11 +3289,10 @@
             
             if (!valido) return;
 
-            // Confirmación botón
             const btn = event.target;
             if (!btn.dataset.confirmando) {
                 const originalText = btn.textContent;
-                btn.textContent = '👉 ¿CONFIRMAR ENVÍO? 👈';
+                btn.textContent = ' ¿CONFIRMAR ENVÍO? ';
                 btn.style.background = 'var(--AMARILLO)';
                 btn.style.color = 'var(--NEGRO)';
                 btn.dataset.confirmando = 'true';
@@ -3814,49 +3311,48 @@
             enviarPedidoWhatsApp();
         }
 
-       function enviarPedidoWhatsApp() {
-    const nombre = document.getElementById('cliente-nombre').value;
-    const telefono = document.getElementById('cliente-telefono').value;
-    const esDelivery = document.getElementById('seccion-delivery').style.display === 'block';
-    
-    let mensaje = `🍽 *NUEVO PEDIDO - CEVICHERÍA TIPO'S* 🦐\n\n`;
-    mensaje += `*CLIENTE:*\n${nombre}\nWhatsApp: ${telefono}\n\n`;
-    mensaje += `*MODALIDAD:* ${esDelivery ? 'Delivery 🚚' : 'Recoger en tienda 🏃'}\n`;
-    
-    if (esDelivery) {
-        // Obtenemos lo que el usuario escribió en el textarea
-        const direccionEscrita = document.getElementById('cliente-direccion').value;
-        mensaje += `*DIRECCIÓN:* ${direccionEscrita}\n`;
-        
-        // Si usó el botón de GPS, añadimos el link
-        if (typeof ubicacionURL !== 'undefined' && ubicacionURL) {
-            mensaje += `*UBICACIÓN GPS:* ${ubicacionURL}\n`;
-        }
-    }
-    
-    mensaje += `\n*PEDIDO:*\n────────\n`;
-    carrito.forEach(item => {
-        mensaje += `• ${item.cantidad} x ${item.nombre} — S/ ${(item.precio * item.cantidad).toFixed(2)}\n`;
-        if(item.especificaciones) mensaje += `  → ${item.especificaciones}\n`;
-    });
-    
-    const subtotal = document.getElementById('subtotal-pedido').innerText;
-    mensaje += `\n*SUBTOTAL: ${subtotal}*\n`;
-    
-    if (esDelivery) {
-        mensaje += `_(El costo de delivery se coordinará por aquí)_ 🛵\n`;
-    }
+        function enviarPedidoWhatsApp() {
+            const nombre = document.getElementById('cliente-nombre').value;
+            const telefono = document.getElementById('cliente-telefono').value;
+            const esDelivery = document.getElementById('seccion-delivery').style.display === 'block';
+            
+            let mensaje = `🍽 *NUEVO PEDIDO - CEVICHERÍA TIPO'S* 🦐\n\n`;
+            mensaje += `*CLIENTE:*\n${nombre}\nWhatsApp: ${telefono}\n\n`;
+            mensaje += `*MODALIDAD:* ${esDelivery ? 'Delivery ' : 'Recoger en tienda '}\n`;
+            
+            if (esDelivery) {
+                const direccionEscrita = document.getElementById('cliente-direccion').value;
+                mensaje += `*DIRECCIÓN:* ${direccionEscrita}\n`;
+                if (ubicacionURL) {
+                    mensaje += `*UBICACIÓN GPS:* ${ubicacionURL}\n`;
+                }
+            }
+            
+            mensaje += `\n*PEDIDO:*\n────────\n`;
+            carrito.forEach(item => {
+                mensaje += `• ${item.cantidad} x ${item.nombre} — S/ ${(item.precio * item.cantidad).toFixed(2)}\n`;
+                if(item.especificaciones) mensaje += `  → ${item.especificaciones}\n`;
+            });
+            
+            const subtotal = document.getElementById('subtotal-pedido').innerText;
+            mensaje += `\n*SUBTOTAL: ${subtotal}*\n`;
+            
+            if (esDelivery) {
+                mensaje += `_(El costo de delivery se coordinará por aquí)_  \n`;
+            }
 
-    mensaje += `*MÉTODO DE PAGO:* ${metodoPagoSeleccionado.toUpperCase()}\n`;
-    
-    if (metodoPagoSeleccionado === 'efectivo') {
-        const monto = document.getElementById('monto-efectivo').value;
-        mensaje += `Paga con: S/ ${monto}\n`;
-    }
-    
-    const numero = '51977420834';
-    window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`, '_blank');
-}
+            mensaje += `*MÉTODO DE PAGO:* ${metodoPagoSeleccionado.toUpperCase()}\n`;
+            
+            if (metodoPagoSeleccionado === 'efectivo') {
+                const monto = document.getElementById('monto-efectivo').value;
+                mensaje += `Paga con: S/ ${monto}\n`;
+            }
+            
+            const notas = document.getElementById('instrucciones').value;
+            if (notas) mensaje += `\n*NOTAS:* ${notas}\n`;
+            
+            const numero = '51977420834';
+            window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`, '_blank');
             
             setTimeout(() => {
                 vaciarCarrito();
@@ -3865,7 +3361,6 @@
             }, 1000);
         }
 
-        // Función para enviar reserva (simple)
         function enviarReservaWhatsApp() {
             const nombre = document.getElementById('reserva-nombre').value;
             const fecha = document.getElementById('reserva-fecha').value;
@@ -3877,11 +3372,11 @@
                 return;
             }
             
-            let mensaje = `¡Hola! 👋 Quisiera hacer una reserva:\n\n`;
-            mensaje += `👤 Nombre: ${nombre}\n`;
-            mensaje += `👥 Personas: ${personas}\n`;
-            mensaje += `📅 Fecha: ${fecha}\n`;
-            mensaje += `⏰ Hora: ${hora}`;
+            let mensaje = `¡Hola!  Quisiera hacer una reserva:\n\n`;
+            mensaje += ` Nombre: ${nombre}\n`;
+            mensaje += ` Personas: ${personas}\n`;
+            mensaje += ` Fecha: ${fecha}\n`;
+            mensaje += ` Hora: ${hora}`;
             
             window.open(`https://wa.me/51977420834?text=${encodeURIComponent(mensaje)}`, '_blank');
         }
@@ -3889,11 +3384,10 @@
         document.addEventListener('DOMContentLoaded', function() {
             actualizarCarrito();
             
-            // Configurar fechas mínimas
             const hoy = new Date().toISOString().split('T')[0];
-            document.getElementById('reserva-fecha').setAttribute('min', hoy);
+            const reservaFecha = document.getElementById('reserva-fecha');
+            if(reservaFecha) reservaFecha.setAttribute('min', hoy);
             
-            // Reemplazar texto de botones
             document.querySelectorAll('.btn-agregar').forEach(boton => {
                 if (boton.innerText.trim() === "Agregar al pedido") {
                     boton.innerHTML = "🛒 AGREGAR A MI PEDIDO";
